@@ -10,6 +10,61 @@
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
 rel="stylesheet">
 </head>
+<script>
+
+const roles = [
+"AI & ML Enthusiast",
+"Python Developer",
+"Cybersecurity Learner",
+"CSE Student"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+
+const typing =
+document.getElementById("typing");
+
+function typeRole(){
+
+    if(charIndex < roles[roleIndex].length){
+
+        typing.textContent +=
+        roles[roleIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(typeRole,100);
+
+    }else{
+
+        setTimeout(eraseRole,1500);
+    }
+}
+
+function eraseRole(){
+
+    if(charIndex > 0){
+
+        typing.textContent =
+        roles[roleIndex].substring(0,charIndex-1);
+
+        charIndex--;
+
+        setTimeout(eraseRole,50);
+
+    }else{
+
+        roleIndex =
+        (roleIndex + 1) % roles.length;
+
+        setTimeout(typeRole,500);
+    }
+}
+
+typeRole();
+
+</script>
 <body>
 <nav class="navbar">
     <div class="logo">Poornendhu</div>
@@ -23,28 +78,41 @@ rel="stylesheet">
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
-   <section id="hero">
+  <section id="hero">
+
     <div class="hero-content">
 
-        <h1>Poornendhu P Kumar</h1>
+        <img
+        src="images/profile.jpeg"
+        alt="Profile"
+        class="profile-pic">
+
+        <h1>
+            Poornendhu P Kumar
+        </h1>
 
         <h2>
-            AI & ML Enthusiast |
-            Python Developer |
-            Computer Science Student
+            <span id="typing"></span>
         </h2>
 
         <p>
-            Building intelligent solutions through
-            Artificial Intelligence,
-            Automation and Modern Web Technologies.
+            Building intelligent solutions using
+            AI, Machine Learning, Python and
+            Modern Web Technologies.
         </p>
 
         <a href="#projects" class="btn">
             View Projects
         </a>
 
+        <a
+        href="https://github.com/poornendhupkumar-afk"
+        class="btn secondary-btn">
+            GitHub
+        </a>
+
     </div>
+
 </section>
 
     <section id="about">
@@ -110,6 +178,35 @@ B.Tech Computer Science and Engineering
 </div>
 
 </section>
+<section id="achievements">
+
+<h2>Achievements</h2>
+
+<div class="achievement-grid">
+
+<div class="achievement-card">
+<h3>AI & ML Diploma</h3>
+<p>Completed a 6-month Diploma in Artificial Intelligence and Machine Learning with A+ grade.</p>
+</div>
+
+<div class="achievement-card">
+<h3>Generative AI Workshop</h3>
+<p>Successfully completed NxtWave's AI for Students hands-on workshop.</p>
+</div>
+
+<div class="achievement-card">
+<h3>Python Development</h3>
+<p>Built automation tools, web applications and AI projects using Python.</p>
+</div>
+
+<div class="achievement-card">
+<h3>Open Source & GitHub</h3>
+<p>Actively using GitHub Actions, automation workflows and version control for projects.</p>
+</div>
+
+</div>
+
+</section>
 <section id="certifications">
 
 <h2>Certifications</h2>
@@ -118,8 +215,10 @@ B.Tech Computer Science and Engineering
 
 <div class="certificate-card">
 
-<img src="images/ai-ml-certificate.png">
 
+<img
+src="images/ai-ml-certificate.png"
+class="certificate-image">
 <h3>Diploma in AI & ML</h3>
 
 <p>LCC Computer Education</p>
@@ -128,7 +227,8 @@ B.Tech Computer Science and Engineering
 
 <div class="certificate-card">
 
-<img src="images/nxtwave-ai.png">
+<img src="images/nxtwave-ai.png" class="certificate-image">
+>
 
 <h3>Generative AI Workshop</h3>
 
@@ -138,7 +238,8 @@ B.Tech Computer Science and Engineering
 
 <div class="certificate-card">
 
-<img src="images/python-certificate.jpg">
+<img src="images/python-certificate.jpg" class="certificate-image">
+>
 
 <h3>Python Certification</h3>
 
@@ -160,18 +261,65 @@ B.Tech Computer Science and Engineering
 </section>
 <section id="contact">
 
-<h2>Connect With Me</h2>
+<h2>Let's Connect</h2>
 
-<a href="https://github.com/poornendhupkumar-afk">
+<div class="contact-links">
+
+<a
+href="https://github.com/poornendhupkumar-afk"
+target="_blank">
+
 GitHub
+
 </a>
 
-<a href="https://www.linkedin.com/in/poornendhu-p-kumar-89aab137b/">
+<a
+href="https://www.linkedin.com/in/poornendhu-p-kumar-89aab137b/"
+target="_blank">
+
 LinkedIn
+
 </a>
+
+<a
+href="mailto:yourmail@gmail.com">
+
+Email
+
+</a>
+
+</div>
+
+</section>
+<section id="github">
+
+<h2>GitHub Statistics</h2>
+
+<div class="stats-container">
+
+<img
+src="https://github-readme-stats.vercel.app/api?username=poornendhupkumar-afk&show_icons=true&theme=tokyonight">
+
+<img
+src="https://github-readme-stats.vercel.app/api/top-langs/?username=poornendhupkumar-afk&layout=compact&theme=tokyonight">
+
+</div>
 
 </section>
     <script src="script.js"></script>
+<footer>
 
+<p>
+
+© 2026 Poornendhu P Kumar
+
+</p>
+
+</footer>
 </body>
+<div id="modal" class="modal">
+
+<img id="modal-img">
+
+</div>
 </html>

@@ -1,110 +1,50 @@
 [
-    {
-        "name": "ai_chatbot",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/ai_chatbot",
-        "stars": 0
-    },
-    {
-        "name": "calculator_python",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/calculator_python",
-        "stars": 0
-    },
-    {
-        "name": "chatbot",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/chatbot",
-        "stars": 0
-    },
-    {
-        "name": "chat_voice",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/chat_voice",
-        "stars": 0
-    },
-    {
-        "name": "codeapookalam",
-        "description": "code-a-pookalam",
-        "url": "https://github.com/poornendhupkumar-afk/codeapookalam",
-        "stars": 0
-    },
-    {
-        "name": "folio",
-        "description": "https://folio-poornendhu.netlify.app/",
-        "url": "https://github.com/poornendhupkumar-afk/folio",
-        "stars": 0
-    },
-    {
-        "name": "foss_designs",
-        "description": "Posters and social media creatives made using adobe illustrator and canva",
-        "url": "https://github.com/poornendhupkumar-afk/foss_designs",
-        "stars": 0
-    },
-    {
-        "name": "gdgc-mec-landing",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/gdgc-mec-landing",
-        "stars": 0
-    },
-    {
-        "name": "object_detection",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/object_detection",
-        "stars": 0
-    },
-    {
-        "name": "pgm2",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/pgm2",
-        "stars": 0
-    },
-    {
-        "name": "pgms1",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/pgms1",
-        "stars": 0
-    },
-    {
-        "name": "portfolio",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/portfolio",
-        "stars": 0
-    },
-    {
-        "name": "PrepPilot",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/PrepPilot",
-        "stars": 0
-    },
-    {
-        "name": "pulse-bot",
-        "description": "Automated daily summary bot built with Python, APIs, GitHub Actions and Email Automation.",
-        "url": "https://github.com/poornendhupkumar-afk/pulse-bot",
-        "stars": 0
-    },
-    {
-        "name": "python-quiz",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/python-quiz",
-        "stars": 0
-    },
-    {
-        "name": "python-quiz-game",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/python-quiz-game",
-        "stars": 0
-    },
-    {
-        "name": "quiz-flask",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/quiz-flask",
-        "stars": 0
-    },
-    {
-        "name": "traffic_sign_detection",
-        "description": null,
-        "url": "https://github.com/poornendhupkumar-afk/traffic_sign_detection",
-        "stars": 0
-    }
+  {
+    "name": "Pulse Bot",
+    "description": "Automated daily summary bot built using Python, APIs, GitHub Actions and email automation. Fetches weather updates, random facts and motivational quotes and delivers them via scheduled emails.",
+    "url": "https://github.com/poornendhupkumar-afk/pulse-bot",
+    "stars": 0
+  },
+  {
+    "name": "Portfolio Website",
+    "description": "Personal developer portfolio showcasing my skills, certifications, projects and GitHub repositories. Built with HTML, CSS, JavaScript and GitHub Pages.",
+    "url": "https://github.com/poornendhupkumar-afk/portfolio",
+    "stars": 0
+  },
+  {
+    "name": "PrepPilot",
+    "description": "Student-focused preparation platform designed to help learners organize study resources and improve exam readiness through a structured workflow.",
+    "url": "https://github.com/poornendhupkumar-afk/PrepPilot",
+    "stars": 0
+  },
+  {
+    "name": "AI Chatbot",
+    "description": "Conversational AI application developed using Python and modern NLP techniques to simulate intelligent human interaction.",
+    "url": "https://github.com/poornendhupkumar-afk/ai_chatbot",
+    "stars": 0
+  },
+  {
+    "name": "Traffic Sign Detection",
+    "description": "Machine learning and computer vision project that identifies and classifies traffic signs from image inputs to assist intelligent transportation systems.",
+    "url": "https://github.com/poornendhupkumar-afk/traffic_sign_detection",
+    "stars": 0
+  },
+  {
+    "name": "Object Detection",
+    "description": "Computer vision project that detects and localizes objects within images using deep learning techniques.",
+    "url": "https://github.com/poornendhupkumar-afk/object_detection",
+    "stars": 0
+  },
+  {
+    "name": "Quiz Flask",
+    "description": "Interactive web-based quiz application developed using Flask, HTML, CSS and Python backend logic.",
+    "url": "https://github.com/poornendhupkumar-afk/quiz-flask",
+    "stars": 0
+  },
+  {
+    "name": "GDGC MEC Landing Page",
+    "description": "Responsive landing page developed for the Google Developer Groups on Campus community at Model Engineering College.",
+    "url": "https://github.com/poornendhupkumar-afk/gdgc-mec-landing",
+    "stars": 0
+  }
 ]
