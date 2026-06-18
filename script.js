@@ -1,160 +1,71 @@
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const navMobile = document.getElementById('navMobile');
-
-if (navToggle && navMobile) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navMobile.classList.toggle('open');
-    navToggle.classList.toggle('active', isOpen);
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  // Close mobile nav when a link is clicked
-  navMobile.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMobile.classList.remove('open');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-// Footer year
-const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-
-// Node-graph canvas — subtle drifting nodes connected by lines, behind the profile photo
-const nodeCanvas = document.getElementById('nodeGraph');
-const prefersReducedMotionForGraph = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (nodeCanvas) {
-  const ctx = nodeCanvas.getContext('2d');
-  let nodes = [];
-  let width = 0;
-  let height = 0;
-  let animId = null;
-
-  function resize() {
-    const rect = nodeCanvas.getBoundingClientRect();
-    width = rect.width;
-    height = rect.height;
-    nodeCanvas.width = width * window.devicePixelRatio;
-    nodeCanvas.height = height * window.devicePixelRatio;
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-  }
-
-  function makeNodes() {
-    const count = Math.max(10, Math.floor((width * height) / 9000));
-    nodes = Array.from({ length: count }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      r: 1.5 + Math.random() * 1.5
+// Particle network
+(function(){
+  const c=document.getElementById('bg'),x=c.getContext('2d');
+  let w,h,ps=[],mx=-1e3,my=-1e3;
+  function size(){w=c.width=innerWidth*devicePixelRatio;h=c.height=innerHeight*devicePixelRatio;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'}
+  function init(){
+    size();
+    const n=Math.min(90,Math.floor((innerWidth*innerHeight)/16000));
+    ps=Array.from({length:n},()=>({
+      x:Math.random()*w,y:Math.random()*h,
+      vx:(Math.random()-.5)*.4*devicePixelRatio,
+      vy:(Math.random()-.5)*.4*devicePixelRatio,
+      r:(Math.random()*1.6+.4)*devicePixelRatio
     }));
   }
+  function tick(){
+    x.clearRect(0,0,w,h);
+    const max=140*devicePixelRatio;
+    for(let i=0;i<ps.length;i++){
+      const p=ps[i];
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1;
+      if(p.y<0||p.y>h)p.vy*=-1;
+      const dx=p.x-mx,dy=p.y-my,dm=Math.hypot(dx,dy);
+      if(dm<160*devicePixelRatio){p.x+=dx/dm*.6;p.y+=dy/dm*.6}
+      x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);
+      x.fillStyle='rgba(180,190,255,.6)';
+      x.fill();
 
-  function step() {
-    ctx.clearRect(0, 0, width, height);
-
-    nodes.forEach(n => {
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < 0 || n.x > width) n.vx *= -1;
-      if (n.y < 0 || n.y > height) n.vy *= -1;
-    });
-
-    const maxDist = Math.min(width, height) * 0.28;
-
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i];
-        const b = nodes[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < maxDist) {
-          const opacity = (1 - dist / maxDist) * 0.35;
-          ctx.strokeStyle = `rgba(217, 146, 62, ${opacity})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
+      for(let j=i+1;j<ps.length;j++){
+        const q=ps[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+        if(d<max){
+          x.strokeStyle='rgba(124,92,255,'+(1-d/max)*.35+')';
+          x.lineWidth=devicePixelRatio*.6;
+          x.beginPath();
+          x.moveTo(p.x,p.y);
+          x.lineTo(q.x,q.y);
+          x.stroke();
         }
       }
     }
-
-    nodes.forEach(n => {
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(217, 146, 62, 0.55)';
-      ctx.fill();
-    });
-
-    animId = requestAnimationFrame(step);
+    requestAnimationFrame(tick);
   }
 
-  function init() {
-    resize();
-    makeNodes();
-    if (animId) cancelAnimationFrame(animId);
-    if (!prefersReducedMotionForGraph) {
-      step();
-    } else {
-      // Draw a single static frame for reduced-motion users
-      step();
-      cancelAnimationFrame(animId);
-    }
-  }
+  addEventListener('resize',init);
+  addEventListener('mousemove',e=>{
+    mx=e.clientX*devicePixelRatio;
+    my=e.clientY*devicePixelRatio;
+  });
+
+  addEventListener('mouseleave',()=>{
+    mx=my=-1e4;
+  });
 
   init();
+  tick();
+})();
 
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(init, 200);
+// Reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
   });
-}
+},{threshold:.12});
 
-// Reveal sections on scroll (subtle, respects reduced motion)
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-  const revealEls = document.querySelectorAll('.section, .hero');
-  revealEls.forEach(el => el.classList.add('reveal'));
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealEls.forEach(el => observer.observe(el));
-}
-
-// Active nav link highlight while scrolling
-const sections = document.querySelectorAll('main .section, main .hero');
-const navAnchors = document.querySelectorAll('.nav-links a');
-
-if (sections.length && navAnchors.length && 'IntersectionObserver' in window) {
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navAnchors.forEach(a => {
-          a.classList.toggle('active-link', a.getAttribute('href') === `#${id}`);
-        });
-      }
-    });
-  }, { rootMargin: '-40% 0px -50% 0px' });
-
-  sections.forEach(s => {
-    if (s.id) navObserver.observe(s);
-  });
-}
+document.querySelectorAll('.reveal').forEach(el=>{
+  io.observe(el);
+});

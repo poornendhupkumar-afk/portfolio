@@ -1,399 +1,341 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poornendhu P Kumar — Portfolio</title>
-<meta name="description" content="Portfolio of Poornendhu P Kumar — B.Tech CSE student (2025–2029) building practical AI/ML projects, automation tools, and software.">
-<meta name="theme-color" content="#16151A">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌁</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Poornendhu P Kumar — CSE · AI/ML · Flutter · Cloud</title>
+<meta name="description" content="Portfolio of Poornendhu P Kumar — B.Tech CSE student building applied AI/ML, Flutter apps, cloud-backed tools and full-stack projects." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<canvas id="bg"></canvas>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
-<!-- ===== NAV ===== -->
-<header class="nav" id="top">
+<nav class="nav">
   <div class="nav-inner">
-    <a class="nav-mark" href="#top"><span class="mono">PPK</span></a>
-    <nav class="nav-links" aria-label="Primary">
+    <span class="brand">PPK</span>
+    <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#now">Now</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#background">Background</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#certs">Certs</a>
       <a href="#contact">Contact</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
-  <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
-    <a href="#about">About</a>
-    <a href="#now">Now</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#background">Background</a>
-    <a href="#contact">Contact</a>
-  </nav>
+</nav>
+
+<header class="hero container">
+  <div>
+    <span class="eyebrow"><span class="dot"></span> Available for internships · Summer 2026</span>
+    <h1>Poornendhu P Kumar<br/><span class="grad">building things that ship.</span></h1>
+    <p class="intro">Second-year B.Tech CSE student at Model Engineering College, Kerala. I work across <strong style="color:#fff">applied AI/ML, Flutter, cloud, and full-stack</strong> — turning rough ideas and messy data into tools people actually use.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#projects">View projects →</a>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn" href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">10+</div><div class="lbl">Projects shipped</div></div>
+      <div class="stat"><div class="num">6mo</div><div class="lbl">AI/ML diploma · A+</div></div>
+      <div class="stat"><div class="num">2</div><div class="lbl">Leadership roles</div></div>
+      <div class="stat"><div class="num">3+</div><div class="lbl">Certifications</div></div>
+    </div>
+  </div>
 </header>
 
-<main id="main">
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow mono">B.TECH CSE — MODEL ENGINEERING COLLEGE</p>
-      <h1 class="hero-title">
-        Poornendhu&nbsp;P&nbsp;Kumar
-      </h1>
-      <p class="hero-sub">
-        I build models, pipelines, and tools that turn messy data and rough ideas
-        into things that actually run. Second-year CSE student focused on
-        applied AI/ML, with a hand in cybersecurity and automation along the way.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View projects</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
-      </div>
-      <div class="hero-meta mono">
-        <span>Kerala, India</span>
-        <span class="sep">/</span>
-        <span>2025 — 2029</span>
-      </div>
+<section id="about" class="container">
+  <div class="section-tag reveal">01 — About</div>
+  <h2 class="reveal">A bit about me</h2>
+  <p class="lead reveal">Applied ML, automation, and just enough web to put a model behind a real interface instead of a notebook.</p>
+  <div class="about-grid">
+    <div class="glass about-card reveal">
+      <p>I'm a second-year B.Tech Computer Science student at <strong>Model Engineering College</strong>, Thrikkakara. My core interest is <strong>applied machine learning</strong> — not just training models, but getting them into a state where someone other than me can actually use them.</p>
+      <p>That's pulled me into a few adjacent areas: <strong>Flutter</strong> and full-stack development to ship interfaces, <strong>cloud</strong> tooling to keep things repeatable, and <strong>cybersecurity</strong> fundamentals to understand how the systems I build can fail.</p>
+      <p>I learn best by finishing things. Every project below started as a way to get unstuck on a specific problem — not as a portfolio checkbox.</p>
     </div>
-    <div class="hero-figure">
-      <canvas id="nodeGraph" class="node-graph" aria-hidden="true"></canvas>
-      <div class="hero-photo-wrap">
-        <img src="images/profile.jpeg" alt="Poornendhu P Kumar" class="hero-photo">
-      </div>
+    <div class="glass info-card reveal">
+      <div class="info-row"><span class="k">Location</span><span class="v">Kerala, India</span></div>
+      <div class="info-row"><span class="k">Education</span><span class="v">B.Tech CSE · 2025–2029</span></div>
+      <div class="info-row"><span class="k">College</span><span class="v">Model Engineering College</span></div>
+      <div class="info-row"><span class="k">Focus</span><span class="v">AI/ML · Flutter · Cloud</span></div>
+      <div class="info-row"><span class="k">Status</span><span class="v" style="color:#22d3ee">Interning @ ZERO2DEV</span></div>
     </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="section" id="about">
-    <div class="section-inner about-grid">
-      <div class="section-head">
-        <p class="eyebrow mono">01 — About</p>
-        <h2>A bit about me</h2>
-      </div>
-      <div class="about-body">
-        <p>
-          I'm a second-year B.Tech Computer Science student at
-          <a href="https://www.mec.ac.in/" target="_blank" rel="noopener">Model Engineering College</a>,
-          Thrikkakara. My core interest is applied machine learning — not just training
-          models, but getting them into a state where someone other than me can actually use them.
-        </p>
-        <p>
-          That's pulled me into a few adjacent areas: Python tooling and automation to make
-          experiments repeatable, cybersecurity to understand how the systems I build can fail,
-          and just enough web development to ship a model behind a real interface instead of
-          a notebook.
-        </p>
-        <p>
-          I learn best by finishing things. Every project below started as a way to get
-          unstuck on a specific problem, not as a portfolio checkbox.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== NOW ===== -->
-  <section class="section section-alt" id="now">
-    <div class="section-inner">
-      <div class="section-head">
-        <p class="eyebrow mono">02 — Now</p>
-        <h2>What I'm working on currently</h2>
-      </div>
-      <div class="now-grid">
-        <div class="now-card now-card-featured">
-          <p class="now-label mono">INTERNSHIP</p>
-          <h3>ZERO2DEV — CET SANKALP AEI</h3>
-          <p>Currently interning at ZERO2DEV, organised by CET SANKALP AEI, building hands-on development experience alongside coursework.</p>
-        </div>
-        <div class="now-card">
-          <p class="now-label mono">TRAINING</p>
-          <h3>Applied ML fundamentals</h3>
-          <p>Building on the AI/ML diploma with hands-on practice — scikit-learn, data preprocessing, and model evaluation on real datasets.</p>
-        </div>
-        <div class="now-card">
-          <p class="now-label mono">EXPLORING</p>
-          <h3>Applied cybersecurity</h3>
-          <p>Network security and ethical hacking fundamentals — partly for its own sake, partly to understand ML attack surfaces.</p>
-        </div>
-        <div class="now-card">
-          <p class="now-label mono">SHIPPING</p>
-          <h3>Small automation tools</h3>
-          <p>Python scripts and GitHub Actions workflows that remove some repetitive task I was tired of doing by hand.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section class="section" id="skills">
-    <div class="section-inner">
-      <div class="section-head">
-        <p class="eyebrow mono">03 — Skills</p>
-        <h2>What I work with</h2>
-      </div>
-
-      <div class="skills-tiers">
-        <div class="skill-tier">
-          <h3 class="tier-title">Languages</h3>
-          <div class="tag-list">
-            <span class="tag">Python</span>
-            <span class="tag">C</span>
-            <span class="tag">C++</span>
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-
-        <div class="skill-tier">
-          <h3 class="tier-title">Tools</h3>
-          <div class="tag-list">
-            <span class="tag">Git</span>
-            <span class="tag">GitHub</span>
-          </div>
-        </div>
-
-        <div class="skill-tier">
-          <h3 class="tier-title">Domains</h3>
-          <div class="tag-list">
-            <span class="tag">AI &amp; Machine Learning</span>
-            <span class="tag">Cybersecurity Fundamentals</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section class="section section-alt" id="projects">
-    <div class="section-inner">
-      <div class="section-head">
-        <p class="eyebrow mono">04 — Projects</p>
-        <h2>Things I've actually shipped</h2>
-      </div>
-
-      <div class="projects-list">
-
-        <!-- PROJECT 1: PulseBot -->
-        <article class="project">
-          <div class="project-media">
-            <img src="images/project-pulsebot.png" alt="PulseBot daily news digest email screenshot" loading="lazy">
-          </div>
-          <div class="project-body">
-            <p class="project-tag mono">AUTOMATION</p>
-            <h3>PulseBot</h3>
-            <p class="project-desc">
-              An automated news digest bot that scrapes top headlines from sources like
-              Hacker News and BBC and fetches real-time weather updates using APIs,
-              retrieves an inspirational quote of the day,generates random interesting facts
-               then emails a clean daily summary straight to the inbox —no manual checking required.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">Source →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 2: PrepPilot -->
-        <article class="project">
-          <div class="project-media">
-            <img src="images/prepilot.png" alt="PrepPilot AI interview practice landing page" loading="lazy">
-          </div>
-          <div class="project-body">
-            <p class="project-tag mono">AI / ML</p>
-            <h3>PrepPilot</h3>
-            <p class="project-desc">
-              An AI-powered interview practice platform that runs mock interviews and gives
-              instant feedback, built to help students prepare for placements with realistic,
-              repeatable practice.
-            </p>
-            <div class="project-links">
-              <a href="https://preppilot-wimz.onrender.com" target="_blank" rel="noopener">Live demo →</a>
-              <a href="#" target="_blank" rel="noopener">Source →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 3: GDGC MEC Landing Page -->
-        <article class="project">
-          <div class="project-media">
-            <img src="images/gdgc.png" alt="GDGC MEC landing page screenshot" loading="lazy">
-          </div>
-          <div class="project-body">
-            <p class="project-tag mono">WEB</p>
-            <h3>GDGC MEC Landing Page</h3>
-            <p class="project-desc">
-              The official landing page for Google Developer Groups on Campus at Model
-              Engineering College — built to introduce the community, its tracks, team, and
-              events to new members.
-            </p>
-            <div class="project-links">
-              <a href="https://gdgc-mec-landing.vercel.app" target="_blank" rel="noopener">Live demo →</a>
-              <a href="#" target="_blank" rel="noopener">Source →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 4: AI Chatbot -->
-        <article class="project">
-          <div class="project-media">
-            <img src="images/chatbot.png" alt="AI chatbot code screenshot" loading="lazy">
-          </div>
-          <div class="project-body">
-            <p class="project-tag mono">AI / ML</p>
-            <h3>AI Chatbot</h3>
-            <p class="project-desc">
-              A conversational chatbot built with Gradio and the Perplexity Sonar API,
-              capable of holding context across a conversation rather than answering each
-              message in isolation.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">Source →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 5: Traffic Sign Detection -->
-        <article class="project">
-          <div class="project-media">
-            <img src="images/traffic.png" alt="Traffic sign detection code screenshot" loading="lazy">
-          </div>
-          <div class="project-body">
-            <p class="project-tag mono">AI / ML</p>
-            <h3>Traffic Sign Detection</h3>
-            <p class="project-desc">
-              A YOLO-based detection system that identifies traffic signs from images in
-              real time and announces them out loud using speech synthesis, aimed at
-              assisting drivers.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">Source →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 6: Object Detection -->
-        <article class="project">
-          <div class="project-media">
-            <img src="images/object det.png" alt="Object detection YOLOv5 code screenshot" loading="lazy">
-          </div>
-          <div class="project-body">
-            <p class="project-tag mono">AI / ML</p>
-            <h3>Object Detection</h3>
-            <p class="project-desc">
-              A general-purpose object detection pipeline built on YOLOv5, supporting
-              inference on images, videos, and live streams across multiple export formats.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">Source →</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="projects-more">
-        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener" class="btn btn-ghost">All repos on GitHub →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BACKGROUND (Education + Achievements + Certs merged) ===== -->
-  <section class="section" id="background">
-    <div class="section-inner">
-      <div class="section-head">
-        <p class="eyebrow mono">05 — Background</p>
-        <h2>Education, milestones, and certifications</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <p class="timeline-date mono">2025 — 2029</p>
-          <h3>B.Tech, Computer Science &amp; Engineering</h3>
-          <p>Model Engineering College, Thrikkakara.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-date mono">Diploma</p>
-          <h3>AI &amp; Machine Learning — A+ grade</h3>
-          <p>6-month diploma, LCC Computer Education. Covered ML fundamentals through applied modeling.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-date mono">Workshop</p>
-          <h3>Generative AI for Students</h3>
-          <p>Hands-on workshop, NxtWave.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-date mono">Certification</p>
-          <h3>Python Development</h3>
-          <p>GeeksforGeeks — built automation tools and small applications as part of certification work.</p>
-        </div>
-      </div>
-
-      <div class="certs">
-        <h3 class="certs-title">Certificates</h3>
-        <div class="certs-grid">
-          <a class="cert-card" href="images/ai-ml-certificate.png" target="_blank" rel="noopener">
-            <img src="images/ai-ml-certificate.png" alt="Diploma in AI and ML certificate" loading="lazy">
-            <p>Diploma in AI &amp; ML — LCC Computer Education</p>
-          </a>
-          <a class="cert-card" href="images/nxtwave-ai.png" target="_blank" rel="noopener">
-            <img src="images/nxtwave-ai.png" alt="Generative AI workshop certificate" loading="lazy">
-            <p>Generative AI Workshop — NxtWave</p>
-          </a>
-          <a class="cert-card" href="images/python-certificate.jpg" target="_blank" rel="noopener">
-            <img src="images/python-certificate.jpg" alt="Python certification" loading="lazy">
-            <p>Python Certification — GeeksforGeeks</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="section section-alt" id="contact">
-    <div class="section-inner contact-inner">
-      <div class="section-head">
-        <p class="eyebrow mono">06 — Contact</p>
-        <h2>Let's talk</h2>
-      </div>
-      <p class="contact-sub">
-        The fastest way to reach me is email — happy to talk about a project,
-        a collaboration, or anything in between.
-      </p>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:poornendhupkumar@gmail.com">
-          <span class="contact-label mono">EMAIL</span>
-          <span>poornendhupkumar@gmail.com</span>
-        </a>
-        <a class="contact-link" href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">
-          <span class="contact-label mono">GITHUB</span>
-          <span>github.com/poornendhupkumar-afk</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/poornendhu-p-kumar-89aab137b/" target="_blank" rel="noopener">
-          <span class="contact-label mono">LINKEDIN</span>
-          <span>linkedin.com/in/poornendhu-p-kumar-89aab137b</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <span>© <span id="year"></span> Poornendhu P Kumar</span>
-    <a href="#top" class="footer-top">Back to top ↑</a>
   </div>
+</section>
+
+<section id="skills" class="container">
+  <div class="section-tag reveal">02 — Skills</div>
+  <h2 class="reveal">What I work with</h2>
+  <p class="lead reveal">Self-rated proficiency based on shipped projects, not just courses.</p>
+  <div class="skills-grid">
+    <div class="glass skill-card reveal">
+      <h3><span class="icn">⟨/⟩</span> Languages</h3>
+      <div class="skill"><div class="skill-head"><span>Python</span><span class="lvl">Advanced · 90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>JavaScript / TypeScript</span><span class="lvl">Proficient · 75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>Dart</span><span class="lvl">Proficient · 70%</span></div><div class="bar"><i style="width:70%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>C / C++</span><span class="lvl">Intermediate · 65%</span></div><div class="bar"><i style="width:65%"></i></div></div>
+    </div>
+    <div class="glass skill-card reveal">
+      <h3><span class="icn">◈</span> AI / ML</h3>
+      <div class="skill"><div class="skill-head"><span>scikit-learn</span><span class="lvl">Advanced · 85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>YOLO / Computer Vision</span><span class="lvl">Proficient · 78%</span></div><div class="bar"><i style="width:78%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>LLM APIs · Perplexity / OpenAI</span><span class="lvl">Proficient · 75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>Pandas / NumPy</span><span class="lvl">Advanced · 85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+    </div>
+    <div class="glass skill-card reveal">
+      <h3><span class="icn">◧</span> Mobile · Full Stack</h3>
+      <div class="skill"><div class="skill-head"><span>Flutter</span><span class="lvl">Proficient · 75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>HTML / CSS</span><span class="lvl">Advanced · 88%</span></div><div class="bar"><i style="width:88%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>React</span><span class="lvl">Intermediate · 70%</span></div><div class="bar"><i style="width:70%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>Gradio / Streamlit</span><span class="lvl">Proficient · 80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
+    </div>
+    <div class="glass skill-card reveal">
+      <h3><span class="icn">☁</span> Cloud · Tooling</h3>
+      <div class="skill"><div class="skill-head"><span>Git · GitHub</span><span class="lvl">Advanced · 90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>GitHub Actions</span><span class="lvl">Proficient · 72%</span></div><div class="bar"><i style="width:72%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>Render / Vercel</span><span class="lvl">Proficient · 75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>Firebase</span><span class="lvl">Intermediate · 65%</span></div><div class="bar"><i style="width:65%"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="container">
+  <div class="section-tag reveal">03 — Projects</div>
+  <h2 class="reveal">Things I've actually shipped</h2>
+  <p class="lead reveal">A mix of AI/ML, automation, mobile and web. Every one solved a problem I had.</p>
+  <div class="proj-grid">
+
+    <article class="glass proj reveal">
+      <span class="tag">Automation · Python</span>
+      <h3>PulseBot</h3>
+      <p>Automated daily news digest bot. Scrapes Hacker News &amp; BBC, pulls real-time weather, an inspirational quote, and a fun fact, then emails a clean summary every morning — no manual checking required.</p>
+      <div class="metrics">
+        <span class="metric">⏱ Saves ~15 min/day</span>
+        <span class="metric">📨 100% automated</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">Python</span><span class="chip">BeautifulSoup</span><span class="chip">SMTP</span><span class="chip">GitHub Actions</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="glass proj reveal">
+      <span class="tag">Mobile · Flutter</span>
+      <h3>Tide Task Manager</h3>
+      <p>A Flutter task manager built around tide-cycle productivity — group tasks into focused waves, track streaks, and sync across devices. Designed for students juggling courses, projects and side work.</p>
+      <div class="metrics">
+        <span class="metric">📱 Cross-platform</span>
+        <span class="metric">🌊 Wave-based flow</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Firebase</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="glass proj reveal">
+      <span class="tag">AI / ML · Full Stack</span>
+      <h3>PrepPilot</h3>
+      <p>AI-powered interview practice platform. Runs realistic mock interviews and gives instant feedback so students can prepare for placements with repeatable, no-pressure reps.</p>
+      <div class="metrics">
+        <span class="metric">🎯 Instant feedback</span>
+        <span class="metric">🚀 Live deployed</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">Python</span><span class="chip">LLM API</span><span class="chip">Render</span>
+      </div>
+      <div class="links">
+        <a class="demo" href="https://preppilot-wimz.onrender.com/" target="_blank" rel="noopener">Live demo ↗</a>
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="glass proj reveal">
+      <span class="tag">Web · Internship</span>
+      <h3>GDGC MEC Landing Page</h3>
+      <p>Official landing page for Google Developer Groups on Campus at Model Engineering College. Introduces the community, its tracks, team and events to new members.</p>
+      <div class="metrics">
+        <span class="metric">👥 Whole campus reach</span>
+        <span class="metric">⚡ Sub-second load</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span><span class="chip">Vercel</span>
+      </div>
+      <div class="links">
+        <a class="demo" href="https://gdgc-mec-landing.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="glass proj reveal">
+      <span class="tag">AI / ML · Computer Vision</span>
+      <h3>Traffic Sign Detection</h3>
+      <p>YOLO-based system that identifies traffic signs from images in real time and announces them with speech synthesis — aimed at assistive driving for low-vision or new drivers.</p>
+      <div class="metrics">
+        <span class="metric">🎥 Real-time inference</span>
+        <span class="metric">🔊 Voice output</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">Python</span><span class="chip">YOLO</span><span class="chip">OpenCV</span><span class="chip">pyttsx3</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="glass proj reveal">
+      <span class="tag">AI / ML</span>
+      <h3>Contextual AI Chatbot</h3>
+      <p>Conversational chatbot built with Gradio + Perplexity Sonar API. Holds context across a conversation instead of answering each message in isolation.</p>
+      <div class="metrics">
+        <span class="metric">💬 Multi-turn memory</span>
+        <span class="metric">⚙ Sub-2s replies</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">Python</span><span class="chip">Gradio</span><span class="chip">Perplexity API</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="glass proj reveal">
+      <span class="tag">AI / ML · Computer Vision</span>
+      <h3>Object Detection Pipeline</h3>
+      <p>General-purpose object detection on YOLOv5 with support for image, video and live-stream inference across multiple export formats.</p>
+      <div class="metrics">
+        <span class="metric">🎞 Img/Vid/Stream</span>
+        <span class="metric">📦 Multi-export</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">Python</span><span class="chip">YOLOv5</span><span class="chip">PyTorch</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="glass proj reveal">
+      <span class="tag">Internship · ZERO2DEV</span>
+      <h3>ZERO2DEV Build Sprints</h3>
+      <p>Internship at ZERO2DEV (CET SANKALP AEI) — shipping small, full-stack features each sprint alongside coursework. Reviewed by mentors with industry experience.</p>
+      <div class="metrics">
+        <span class="metric">🛠 Weekly sprints</span>
+        <span class="metric">👨‍🏫 Mentor-reviewed</span>
+      </div>
+      <div class="tech-row">
+        <span class="chip">Full Stack</span><span class="chip">Git</span><span class="chip">Agile</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="leadership" class="container">
+  <div class="section-tag reveal">04 — Leadership</div>
+  <h2 class="reveal">Leadership &amp; community</h2>
+  <p class="lead reveal">Where I show up beyond coursework.</p>
+  <div class="timeline">
+    <div class="tnode reveal">
+      <div class="when">2025 — Present</div>
+      <h3>Executive Member · FOSS MEC</h3>
+      <div class="where">Free &amp; Open Source Software cell, Model Engineering College</div>
+      <p>Organising open-source workshops, hackathon prep sessions and contribution drives for first- and second-year students. Helping juniors land their first PRs on real projects.</p>
+    </div>
+    <div class="tnode reveal">
+      <div class="when">2025 — Present</div>
+      <h3>Tech Team · GDGC MEC</h3>
+      <div class="where">Google Developer Groups on Campus, Model Engineering College</div>
+      <p>Built and shipped the official GDGC MEC landing page (now live). Supporting tech sessions on Flutter, Firebase, and applied AI for the campus community.</p>
+    </div>
+    <div class="tnode reveal">
+      <div class="when">2025</div>
+      <h3>Intern · ZERO2DEV</h3>
+      <div class="where">CET SANKALP AEI</div>
+      <p>Hands-on dev internship building shipping-quality features on a weekly cadence alongside regular coursework.</p>
+    </div>
+    <div class="tnode reveal">
+      <div class="when">2025</div>
+      <h3>Generative AI Workshop · NxtWave</h3>
+      <div class="where">Hands-on cohort</div>
+      <p>Worked through prompting, embeddings and lightweight RAG flows — fed directly into PrepPilot and the contextual chatbot.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certs" class="container">
+  <div class="section-tag reveal">05 — Certifications</div>
+  <h2 class="reveal">Background &amp; credentials</h2>
+  <p class="lead reveal">Formal training that backs the project work above.</p>
+  <div class="cert-grid">
+    <div class="glass cert reveal">
+      <div class="badge">A+</div>
+      <h3>Diploma in AI &amp; Machine Learning</h3>
+      <div class="iss">LCC Computer Education</div>
+      <div class="meta"><span>6 months</span><span>Grade A+</span></div>
+    </div>
+    <div class="glass cert reveal">
+      <div class="badge">Py</div>
+      <h3>Python Development</h3>
+      <div class="iss">GeeksforGeeks</div>
+      <div class="meta"><span>Certified</span><span>Project-based</span></div>
+    </div>
+    <div class="glass cert reveal">
+      <div class="badge">AI</div>
+      <h3>Generative AI for Students</h3>
+      <div class="iss">NxtWave Workshop</div>
+      <div class="meta"><span>Hands-on</span><span>2025</span></div>
+    </div>
+    <div class="glass cert reveal">
+      <div class="badge">CSE</div>
+      <h3>B.Tech, Computer Science &amp; Engineering</h3>
+      <div class="iss">Model Engineering College</div>
+      <div class="meta"><span>2025 — 2029</span><span>Ongoing</span></div>
+    </div>
+    <div class="glass cert reveal">
+      <div class="badge">Z2D</div>
+      <h3>ZERO2DEV Internship</h3>
+      <div class="iss">CET SANKALP AEI</div>
+      <div class="meta"><span>Internship</span><span>Active</span></div>
+    </div>
+    <div class="glass cert reveal">
+      <div class="badge">Sec</div>
+      <h3>Applied Cybersecurity (self-study)</h3>
+      <div class="iss">Network security &amp; ethical hacking</div>
+      <div class="meta"><span>Ongoing</span><span>Self-paced</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <div class="section-tag reveal">06 — Contact</div>
+  <h2 class="reveal">Let's build something</h2>
+  <p class="lead reveal">Open to internships, collaborations, and interesting problems in AI/ML, Flutter or full-stack.</p>
+  <div class="glass contact-wrap reveal">
+    <h3>Reach out — fastest path is email.</h3>
+    <p>Happy to talk about a project, a collaboration, a research idea, or an internship opportunity.</p>
+    <div class="socials">
+      <a class="btn primary" href="mailto:poornendhupkumar@gmail.com">✉ Email me</a>
+      <a class="btn" href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://poornendhupkumar-afk.github.io/portfolio/" target="_blank" rel="noopener">Old site ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Poornendhu P Kumar · Built from scratch with HTML, CSS &amp; JS</div>
 </footer>
 
 <script src="script.js"></script>
