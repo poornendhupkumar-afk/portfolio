@@ -1,55 +1,45 @@
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navMobile = document.getElementById('navMobile');
 
-fetch("projects.json")
-.then(response => response.json())
-.then(projects => {
+if (navToggle && navMobile) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMobile.classList.toggle('open');
+    navToggle.classList.toggle('active', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
 
-const container =
-document.getElementById("project-container");
+  // Close mobile nav when a link is clicked
+  navMobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMobile.classList.remove('open');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
-projects.forEach(project => {
+// Footer year
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-container.innerHTML += `
+// Reveal sections on scroll (subtle, respects reduced motion)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-<div class="project-card">
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const revealEls = document.querySelectorAll('.section, .hero');
+  revealEls.forEach(el => el.classList.add('reveal'));
 
-<h3>${project.name}</h3>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
-<p>${project.description || "No description"}</p>
-
-<a href="${project.html_url}">
-View Project
-</a>
-
-</div>
-
-`;
-
-});
-
-});
-const images =
-document.querySelectorAll(".certificate-image");
-
-const modal =
-document.getElementById("modal");
-
-const modalImg =
-document.getElementById("modal-img");
-
-images.forEach(img=>{
-
-img.addEventListener("click",()=>{
-
-modal.style.display="flex";
-
-modalImg.src = img.src;
-
-});
-
-});
-
-modal.addEventListener("click",()=>{
-
-modal.style.display="none";
-
-});
+  revealEls.forEach(el => observer.observe(el));
+}

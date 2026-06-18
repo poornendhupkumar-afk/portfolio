@@ -1,325 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto GitHub Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poornendhu P Kumar — ML/AI Engineer in training</title>
+<meta name="description" content="Portfolio of Poornendhu P Kumar — B.Tech CSE student building practical AI/ML projects, automation tools, and software.">
+<meta name="theme-color" content="#16151A">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<script>
-
-const roles = [
-"AI & ML Enthusiast",
-"Python Developer",
-"Cybersecurity Learner",
-"CSE Student"
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-
-const typing =
-document.getElementById("typing");
-
-function typeRole(){
-
-    if(charIndex < roles[roleIndex].length){
-
-        typing.textContent +=
-        roles[roleIndex].charAt(charIndex);
-
-        charIndex++;
-
-        setTimeout(typeRole,100);
-
-    }else{
-
-        setTimeout(eraseRole,1500);
-    }
-}
-
-function eraseRole(){
-
-    if(charIndex > 0){
-
-        typing.textContent =
-        roles[roleIndex].substring(0,charIndex-1);
-
-        charIndex--;
-
-        setTimeout(eraseRole,50);
-
-    }else{
-
-        roleIndex =
-        (roleIndex + 1) % roles.length;
-
-        setTimeout(typeRole,500);
-    }
-}
-
-typeRole();
-
-</script>
 <body>
-<nav class="navbar">
-    <div class="logo">Poornendhu</div>
 
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certificates</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-  <section id="hero">
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="hero-content">
+<!-- ===== NAV ===== -->
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top"><span class="mono">PPK</span><span class="dot">·</span><span class="nav-mark-sub">ml</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#now">Now</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+    <a href="#about">About</a>
+    <a href="#now">Now</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#background">Background</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-        <img
-        src="images/profile.jpeg"
-        alt="Profile"
-        class="profile-pic">
+<main id="main">
 
-        <h1>
-            Poornendhu P Kumar
-        </h1>
-
-        <h2>
-            <span id="typing"></span>
-        </h2>
-
-        <p>
-            Building intelligent solutions using
-            AI, Machine Learning, Python and
-            Modern Web Technologies.
-        </p>
-
-        <a href="#projects" class="btn">
-            View Projects
-        </a>
-
-        <a
-        href="https://github.com/poornendhupkumar-afk"
-        class="btn secondary-btn">
-            GitHub
-        </a>
-
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow mono">B.TECH CSE — MODEL ENGINEERING COLLEGE</p>
+      <h1 class="hero-title">
+        Poornendhu&nbsp;P&nbsp;Kumar
+      </h1>
+      <p class="hero-sub">
+        I build models, pipelines, and tools that turn messy data and rough ideas
+        into things that actually run. Second-year CSE student focused on
+        applied AI/ML, with a hand in cybersecurity and automation along the way.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-meta mono">
+        <span>Kerala, India</span>
+        <span class="sep">/</span>
+        <span>Open to internships</span>
+      </div>
     </div>
-
-</section>
-
-    <section id="about">
-
-<h2>About Me</h2>
-
-<p>
-
-Hello! I'm Poornendhu P Kumar, a second-year
-B.Tech Computer Science student at
-Model Engineering College, Thrikkakara.
-
-My interests include Artificial Intelligence,
-Machine Learning, Cybersecurity,
-Python Development and Software Engineering.
-
-I enjoy building practical projects that combine
-automation, AI and modern development tools.
-
-</p>
-
-</section>
-
-<section id="skills">
-
-<h2>Skills</h2>
-
-<div class="skills-grid">
-
-<div class="skill-card">Python</div>
-<div class="skill-card">Java</div>
-<div class="skill-card">HTML</div>
-<div class="skill-card">CSS</div>
-<div class="skill-card">JavaScript</div>
-
-<div class="skill-card">Git</div>
-<div class="skill-card">GitHub</div>
-
-<div class="skill-card">Machine Learning</div>
-<div class="skill-card">Generative AI</div>
-
-<div class="skill-card">Cybersecurity</div>
-
-</div>
-
-</section>
-<section id="education">
-
-<h2>Education</h2>
-
-<div class="card">
-
-<h3>Model Engineering College</h3>
-
-<p>
-B.Tech Computer Science and Engineering
-</p>
-
-<p>
-2024 - Present
-</p>
-
-</div>
-
-</section>
-<section id="achievements">
-
-<h2>Achievements</h2>
-
-<div class="achievement-grid">
-
-<div class="achievement-card">
-<h3>AI & ML Diploma</h3>
-<p>Completed a 6-month Diploma in Artificial Intelligence and Machine Learning with A+ grade.</p>
-</div>
-
-<div class="achievement-card">
-<h3>Generative AI Workshop</h3>
-<p>Successfully completed NxtWave's AI for Students hands-on workshop.</p>
-</div>
-
-<div class="achievement-card">
-<h3>Python Development</h3>
-<p>Built automation tools, web applications and AI projects using Python.</p>
-</div>
-
-<div class="achievement-card">
-<h3>Open Source & GitHub</h3>
-<p>Actively using GitHub Actions, automation workflows and version control for projects.</p>
-</div>
-
-</div>
-
-</section>
-<section id="certifications">
-
-<h2>Certifications</h2>
-
-<div class="certificate-grid">
-
-<div class="certificate-card">
-
-
-<img
-src="images/ai-ml-certificate.png"
-class="certificate-image">
-<h3>Diploma in AI & ML</h3>
-
-<p>LCC Computer Education</p>
-
-</div>
-
-<div class="certificate-card">
-
-<img src="images/nxtwave-ai.png" class="certificate-image">
->
-
-<h3>Generative AI Workshop</h3>
-
-<p>NxtWave</p>
-
-</div>
-
-<div class="certificate-card">
-
-<img src="images/python-certificate.jpg" class="certificate-image">
->
-
-<h3>Python Certification</h3>
-
-<p>GeeksforGeeks</p>
-
-</div>
-
-</div>
-
-</section>
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div id="project-container">
-
-</div>
-
-</section>
-<section id="contact">
-
-<h2>Let's Connect</h2>
-
-<div class="contact-links">
-
-<a
-href="https://github.com/poornendhupkumar-afk"
-target="_blank">
-
-GitHub
-
-</a>
-
-<a
-href="https://www.linkedin.com/in/poornendhu-p-kumar-89aab137b/"
-target="_blank">
-
-LinkedIn
-
-</a>
-
-<a
-href="mailto:yourmail@gmail.com">
-
-Email
-
-</a>
-
-</div>
-
-</section>
-<section id="github">
-
-<h2>GitHub Statistics</h2>
-
-<div class="stats-container">
-
-<img
-src="https://github-readme-stats.vercel.app/api?username=poornendhupkumar-afk&show_icons=true&theme=tokyonight">
-
-<img
-src="https://github-readme-stats.vercel.app/api/top-langs/?username=poornendhupkumar-afk&layout=compact&theme=tokyonight">
-
-</div>
-
-</section>
-    <script src="script.js"></script>
-<footer>
-
-<p>
-
-© 2026 Poornendhu P Kumar
-
-</p>
-
+    <div class="hero-figure" aria-hidden="true">
+      <div class="confidence-card">
+        <div class="confidence-row"><span>model.eval()</span><span class="bar"><span class="bar-fill" style="width:92%"></span></span><span class="mono pct">92%</span></div>
+        <div class="confidence-row"><span>pipeline.run()</span><span class="bar"><span class="bar-fill" style="width:87%"></span></span><span class="mono pct">87%</span></div>
+        <div class="confidence-row"><span>deploy.ship()</span><span class="bar"><span class="bar-fill" style="width:78%"></span></span><span class="mono pct">78%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section-inner about-grid">
+      <div class="section-head">
+        <p class="eyebrow mono">01 — About</p>
+        <h2>Why I build the way I do</h2>
+      </div>
+      <div class="about-body">
+        <p>
+          I'm a second-year B.Tech Computer Science student at
+          <a href="https://www.mec.ac.in/" target="_blank" rel="noopener">Model Engineering College</a>,
+          Thrikkakara. My core interest is applied machine learning — not just training
+          models, but getting them into a state where someone other than me can actually use them.
+        </p>
+        <p>
+          That's pulled me into a few adjacent areas: Python tooling and automation to make
+          experiments repeatable, cybersecurity to understand how the systems I build can fail,
+          and just enough web development to ship a model behind a real interface instead of
+          a notebook.
+        </p>
+        <p>
+          I learn best by finishing things. Every project below started as a way to get
+          unstuck on a specific problem, not as a portfolio checkbox.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOW ===== -->
+  <section class="section section-alt" id="now">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow mono">02 — Now</p>
+        <h2>What I'm working on currently</h2>
+      </div>
+      <div class="now-grid">
+        <div class="now-card now-card-featured">
+          <p class="now-label mono">INTERNSHIP</p>
+          <h3>ZERO2DEV — CET SANKALP AEI</h3>
+          <p>Currently interning at ZERO2DEV, organised by CET SANKALP AEI, building hands-on development experience alongside coursework.</p>
+        </div>
+        <div class="now-card">
+          <p class="now-label mono">TRAINING</p>
+          <h3>Applied ML &amp; model evaluation</h3>
+          <p>Going deeper on PyTorch, proper train/val/test discipline, and reading papers instead of just tutorials.</p>
+        </div>
+        <div class="now-card">
+          <p class="now-label mono">EXPLORING</p>
+          <h3>Applied cybersecurity</h3>
+          <p>Network security and ethical hacking fundamentals — partly for its own sake, partly to understand ML attack surfaces.</p>
+        </div>
+        <div class="now-card">
+          <p class="now-label mono">SHIPPING</p>
+          <h3>Small automation tools</h3>
+          <p>Python scripts and GitHub Actions workflows that remove some repetitive task I was tired of doing by hand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow mono">03 — Skills</p>
+        <h2>What I work with</h2>
+      </div>
+
+      <div class="skills-tiers">
+        <div class="skill-tier">
+          <h3 class="tier-title">Languages</h3>
+          <div class="tag-list">
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-tier">
+          <h3 class="tier-title">Tools</h3>
+          <div class="tag-list">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+          </div>
+        </div>
+
+        <div class="skill-tier">
+          <h3 class="tier-title">Domains</h3>
+          <div class="tag-list">
+            <span class="tag">AI &amp; Machine Learning</span>
+            <span class="tag">Cybersecurity Fundamentals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section section-alt" id="projects">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow mono">04 — Projects</p>
+        <h2>Things I've actually shipped</h2>
+      </div>
+
+      <div class="projects-list">
+
+        <!-- PROJECT 1 -->
+        <article class="project">
+          <div class="project-media">
+            <img src="images/project-placeholder-1.svg" alt="Project thumbnail" loading="lazy">
+          </div>
+          <div class="project-body">
+            <p class="project-tag mono">AI / ML</p>
+            <h3>Project Title One</h3>
+            <p class="project-problem">
+              <strong>Problem:</strong> Replace this with a one-line statement of what was broken
+              or missing before this project existed.
+            </p>
+            <p class="project-approach">
+              <strong>Approach:</strong> Replace with your stack and method — e.g. "Fine-tuned a
+              ResNet-18 on a custom dataset of 4,000 labeled images, deployed via a Streamlit app."
+            </p>
+            <div class="project-stats">
+              <span class="stat"><span class="mono stat-num">92%</span> accuracy</span>
+              <span class="stat"><span class="mono stat-num">4k</span> training images</span>
+              <span class="stat"><span class="mono stat-num">120ms</span> inference</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Live demo →</a>
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project">
+          <div class="project-media">
+            <img src="images/project-placeholder-2.svg" alt="Project thumbnail" loading="lazy">
+          </div>
+          <div class="project-body">
+            <p class="project-tag mono">AUTOMATION</p>
+            <h3>Project Title Two</h3>
+            <p class="project-problem">
+              <strong>Problem:</strong> Replace with the real pain point this tool solved.
+            </p>
+            <p class="project-approach">
+              <strong>Approach:</strong> Replace with what you actually built and how —
+              language, libraries, and the key design decision.
+            </p>
+            <div class="project-stats">
+              <span class="stat"><span class="mono stat-num">3hr</span> → <span class="mono stat-num">2min</span> per run</span>
+              <span class="stat"><span class="mono stat-num">100%</span> automated</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Live demo →</a>
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project">
+          <div class="project-media">
+            <img src="images/project-placeholder-3.svg" alt="Project thumbnail" loading="lazy">
+          </div>
+          <div class="project-body">
+            <p class="project-tag mono">SECURITY</p>
+            <h3>Project Title Three</h3>
+            <p class="project-problem">
+              <strong>Problem:</strong> Replace with the scenario or vulnerability this addressed.
+            </p>
+            <p class="project-approach">
+              <strong>Approach:</strong> Replace with your method, tools used, and what you found or built.
+            </p>
+            <div class="project-stats">
+              <span class="stat"><span class="mono stat-num">12</span> checks automated</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="projects-more">
+        <a href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener" class="btn btn-ghost">All repos on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BACKGROUND (Education + Achievements + Certs merged) ===== -->
+  <section class="section" id="background">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow mono">05 — Background</p>
+        <h2>Education, milestones, and certifications</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="timeline-date mono">2024 — Present</p>
+          <h3>B.Tech, Computer Science &amp; Engineering</h3>
+          <p>Model Engineering College, Thrikkakara.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date mono">Diploma</p>
+          <h3>AI &amp; Machine Learning — A+ grade</h3>
+          <p>6-month diploma, LCC Computer Education. Covered ML fundamentals through applied modeling.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date mono">Workshop</p>
+          <h3>Generative AI for Students</h3>
+          <p>Hands-on workshop, NxtWave.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date mono">Certification</p>
+          <h3>Python Development</h3>
+          <p>GeeksforGeeks — built automation tools and small applications as part of certification work.</p>
+        </div>
+      </div>
+
+      <div class="certs">
+        <h3 class="certs-title">Certificates</h3>
+        <div class="certs-grid">
+          <a class="cert-card" href="images/ai-ml-certificate.png" target="_blank" rel="noopener">
+            <img src="images/ai-ml-certificate.png" alt="Diploma in AI and ML certificate" loading="lazy">
+            <p>Diploma in AI &amp; ML — LCC Computer Education</p>
+          </a>
+          <a class="cert-card" href="images/nxtwave-ai.png" target="_blank" rel="noopener">
+            <img src="images/nxtwave-ai.png" alt="Generative AI workshop certificate" loading="lazy">
+            <p>Generative AI Workshop — NxtWave</p>
+          </a>
+          <a class="cert-card" href="images/python-certificate.jpg" target="_blank" rel="noopener">
+            <img src="images/python-certificate.jpg" alt="Python certification" loading="lazy">
+            <p>Python Certification — GeeksforGeeks</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section-alt" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="section-head">
+        <p class="eyebrow mono">06 — Contact</p>
+        <h2>Let's talk</h2>
+      </div>
+      <p class="contact-sub">
+        Open to internships, collaborations, or just talking shop about a project.
+        The fastest way to reach me is email.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:poornendhupkumar@gmail.com">
+          <span class="contact-label mono">EMAIL</span>
+          <span>poornendhupkumar@gmail.com</span>
+        </a>
+        <a class="contact-link" href="https://github.com/poornendhupkumar-afk" target="_blank" rel="noopener">
+          <span class="contact-label mono">GITHUB</span>
+          <span>github.com/poornendhupkumar-afk</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/poornendhu-p-kumar-89aab137b/" target="_blank" rel="noopener">
+          <span class="contact-label mono">LINKEDIN</span>
+          <span>linkedin.com/in/poornendhu-p-kumar</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Poornendhu P Kumar</span>
+    <a href="#top" class="footer-top">Back to top ↑</a>
+  </div>
 </footer>
+
+<script src="script.js"></script>
 </body>
-<div id="modal" class="modal">
-
-<img id="modal-img">
-
-</div>
 </html>
