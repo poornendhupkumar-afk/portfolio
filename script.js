@@ -25,54 +25,98 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-// Terminal typing effect — cycles through a few real lines about Poornendhu
-const typedLineEl = document.getElementById('typedLine');
-const prefersReducedMotionForType = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Node-graph canvas — subtle drifting nodes connected by lines, behind the profile photo
+const nodeCanvas = document.getElementById('nodeGraph');
+const prefersReducedMotionForGraph = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (typedLineEl) {
-  const lines = [
-    'whoami',
-    'Poornendhu P Kumar',
-    'cat interests.txt',
-    'AI/ML, Cybersecurity, Python',
-    'status --current',
-    'Interning at ZERO2DEV'
-  ];
+if (nodeCanvas) {
+  const ctx = nodeCanvas.getContext('2d');
+  let nodes = [];
+  let width = 0;
+  let height = 0;
+  let animId = null;
 
-  if (prefersReducedMotionForType) {
-    typedLineEl.textContent = lines[1];
-  } else {
-    let lineIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+  function resize() {
+    const rect = nodeCanvas.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+    nodeCanvas.width = width * window.devicePixelRatio;
+    nodeCanvas.height = height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
 
-    function tick() {
-      const current = lines[lineIndex];
+  function makeNodes() {
+    const count = Math.max(10, Math.floor((width * height) / 9000));
+    nodes = Array.from({ length: count }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      r: 1.5 + Math.random() * 1.5
+    }));
+  }
 
-      if (!deleting) {
-        charIndex++;
-        typedLineEl.textContent = current.slice(0, charIndex);
-        if (charIndex === current.length) {
-          deleting = true;
-          setTimeout(tick, 1400);
-          return;
+  function step() {
+    ctx.clearRect(0, 0, width, height);
+
+    nodes.forEach(n => {
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > width) n.vx *= -1;
+      if (n.y < 0 || n.y > height) n.vy *= -1;
+    });
+
+    const maxDist = Math.min(width, height) * 0.28;
+
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i];
+        const b = nodes[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < maxDist) {
+          const opacity = (1 - dist / maxDist) * 0.35;
+          ctx.strokeStyle = `rgba(217, 146, 62, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
         }
-        setTimeout(tick, 45);
-      } else {
-        charIndex--;
-        typedLineEl.textContent = current.slice(0, charIndex);
-        if (charIndex === 0) {
-          deleting = false;
-          lineIndex = (lineIndex + 1) % lines.length;
-          setTimeout(tick, 300);
-          return;
-        }
-        setTimeout(tick, 22);
       }
     }
 
-    tick();
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(217, 146, 62, 0.55)';
+      ctx.fill();
+    });
+
+    animId = requestAnimationFrame(step);
   }
+
+  function init() {
+    resize();
+    makeNodes();
+    if (animId) cancelAnimationFrame(animId);
+    if (!prefersReducedMotionForGraph) {
+      step();
+    } else {
+      // Draw a single static frame for reduced-motion users
+      step();
+      cancelAnimationFrame(animId);
+    }
+  }
+
+  init();
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(init, 200);
+  });
 }
 
 // Reveal sections on scroll (subtle, respects reduced motion)

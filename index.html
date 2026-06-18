@@ -66,15 +66,10 @@
         <span>2025 — 2029</span>
       </div>
     </div>
-    <div class="hero-figure" aria-hidden="true">
-      <div class="terminal">
-        <div class="terminal-bar">
-          <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-          <span class="terminal-title mono">whoami.sh</span>
-        </div>
-        <div class="terminal-body mono">
-          <p class="terminal-line"><span class="prompt">$</span> <span id="typedLine"></span><span class="cursor">▌</span></p>
-        </div>
+    <div class="hero-figure">
+      <canvas id="nodeGraph" class="node-graph" aria-hidden="true"></canvas>
+      <div class="hero-photo-wrap">
+        <img src="images/profile.jpeg" alt="Poornendhu P Kumar" class="hero-photo">
       </div>
     </div>
   </section>
@@ -84,7 +79,7 @@
     <div class="section-inner about-grid">
       <div class="section-head">
         <p class="eyebrow mono">01 — About</p>
-        <h2>Why I build the way I do</h2>
+        <h2>A bit about me</h2>
       </div>
       <div class="about-body">
         <p>
@@ -189,77 +184,115 @@
 
       <div class="projects-list">
 
-        <!-- PROJECT 1 -->
+        <!-- PROJECT 1: PulseBot -->
         <article class="project">
           <div class="project-media">
-            <img src="images/project-placeholder-1.svg" alt="Project thumbnail" loading="lazy">
-          </div>
-          <div class="project-body">
-            <p class="project-tag mono">AI / ML</p>
-            <h3>Project Title One</h3>
-            <p class="project-problem">
-              <strong>Problem:</strong> Replace this with a one-line statement of what was broken
-              or missing before this project existed.
-            </p>
-            <p class="project-approach">
-              <strong>Approach:</strong> Replace with your stack and method — e.g. "Fine-tuned a
-              ResNet-18 on a custom dataset of 4,000 labeled images, deployed via a Streamlit app."
-            </p>
-            <div class="project-stats">
-              <span class="stat"><span class="mono stat-num">92%</span> accuracy</span>
-              <span class="stat"><span class="mono stat-num">4k</span> training images</span>
-              <span class="stat"><span class="mono stat-num">120ms</span> inference</span>
-            </div>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">Live demo →</a>
-              <a href="#" target="_blank" rel="noopener">Source →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 2 -->
-        <article class="project">
-          <div class="project-media">
-            <img src="images/project-placeholder-2.svg" alt="Project thumbnail" loading="lazy">
+            <img src="images/project-pulsebot.png" alt="PulseBot daily news digest email screenshot" loading="lazy">
           </div>
           <div class="project-body">
             <p class="project-tag mono">AUTOMATION</p>
-            <h3>Project Title Two</h3>
-            <p class="project-problem">
-              <strong>Problem:</strong> Replace with the real pain point this tool solved.
+            <h3>PulseBot</h3>
+            <p class="project-desc">
+              An automated news digest bot that scrapes top headlines from sources like
+              Hacker News and BBC, then emails a clean daily summary straight to the inbox —
+              no manual checking required.
             </p>
-            <p class="project-approach">
-              <strong>Approach:</strong> Replace with what you actually built and how —
-              language, libraries, and the key design decision.
-            </p>
-            <div class="project-stats">
-              <span class="stat"><span class="mono stat-num">3hr</span> → <span class="mono stat-num">2min</span> per run</span>
-              <span class="stat"><span class="mono stat-num">100%</span> automated</span>
-            </div>
             <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">Live demo →</a>
               <a href="#" target="_blank" rel="noopener">Source →</a>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 3 -->
+        <!-- PROJECT 2: PrepPilot -->
         <article class="project">
           <div class="project-media">
-            <img src="images/project-placeholder-3.svg" alt="Project thumbnail" loading="lazy">
+            <img src="images/project-preppilot.png" alt="PrepPilot AI interview practice landing page" loading="lazy">
           </div>
           <div class="project-body">
-            <p class="project-tag mono">SECURITY</p>
-            <h3>Project Title Three</h3>
-            <p class="project-problem">
-              <strong>Problem:</strong> Replace with the scenario or vulnerability this addressed.
+            <p class="project-tag mono">AI / ML</p>
+            <h3>PrepPilot</h3>
+            <p class="project-desc">
+              An AI-powered interview practice platform that runs mock interviews and gives
+              instant feedback, built to help students prepare for placements with realistic,
+              repeatable practice.
             </p>
-            <p class="project-approach">
-              <strong>Approach:</strong> Replace with your method, tools used, and what you found or built.
-            </p>
-            <div class="project-stats">
-              <span class="stat"><span class="mono stat-num">12</span> checks automated</span>
+            <div class="project-links">
+              <a href="https://preppilot-wimz.onrender.com" target="_blank" rel="noopener">Live demo →</a>
+              <a href="#" target="_blank" rel="noopener">Source →</a>
             </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: GDGC MEC Landing Page -->
+        <article class="project">
+          <div class="project-media">
+            <img src="images/project-gdgc.png" alt="GDGC MEC landing page screenshot" loading="lazy">
+          </div>
+          <div class="project-body">
+            <p class="project-tag mono">WEB</p>
+            <h3>GDGC MEC Landing Page</h3>
+            <p class="project-desc">
+              The official landing page for Google Developer Groups on Campus at Model
+              Engineering College — built to introduce the community, its tracks, team, and
+              events to new members.
+            </p>
+            <div class="project-links">
+              <a href="https://gdgc-mec-landing.vercel.app" target="_blank" rel="noopener">Live demo →</a>
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: AI Chatbot -->
+        <article class="project">
+          <div class="project-media">
+            <img src="images/project-chatbot.png" alt="AI chatbot code screenshot" loading="lazy">
+          </div>
+          <div class="project-body">
+            <p class="project-tag mono">AI / ML</p>
+            <h3>AI Chatbot</h3>
+            <p class="project-desc">
+              A conversational chatbot built with Gradio and the Perplexity Sonar API,
+              capable of holding context across a conversation rather than answering each
+              message in isolation.
+            </p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: Traffic Sign Detection -->
+        <article class="project">
+          <div class="project-media">
+            <img src="images/project-trafficsign.png" alt="Traffic sign detection code screenshot" loading="lazy">
+          </div>
+          <div class="project-body">
+            <p class="project-tag mono">AI / ML</p>
+            <h3>Traffic Sign Detection</h3>
+            <p class="project-desc">
+              A YOLO-based detection system that identifies traffic signs from images in
+              real time and announces them out loud using speech synthesis, aimed at
+              assisting drivers.
+            </p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Source →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 6: Object Detection -->
+        <article class="project">
+          <div class="project-media">
+            <img src="images/project-objectdetection.png" alt="Object detection YOLOv5 code screenshot" loading="lazy">
+          </div>
+          <div class="project-body">
+            <p class="project-tag mono">AI / ML</p>
+            <h3>Object Detection</h3>
+            <p class="project-desc">
+              A general-purpose object detection pipeline built on YOLOv5, supporting
+              inference on images, videos, and live streams across multiple export formats.
+            </p>
             <div class="project-links">
               <a href="#" target="_blank" rel="noopener">Source →</a>
             </div>
